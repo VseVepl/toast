@@ -164,6 +164,9 @@ return [
         'type_overrides' => [ // Overrides for specific toast types
             'success' => ['foreground' => 'bg-green-400/90 dark:bg-green-500/80'],
             'error' => ['foreground' => 'bg-red-400/90 dark:bg-red-500/80', 'height' => 'h-[2px]'],
+            'warning' => ['foreground' => 'bg-yellow-400 dark:bg-yellow-500'],
+            'info' => ['foreground' => 'bg-blue-500 dark:bg-blue-400'],
+            'custom_notification' => ['foreground' => 'bg-purple-400 dark:bg-purple-500'],
             'default' => ['foreground' => 'bg-gray-500 dark:bg-gray-400'], // Default fallback
         ],
     ],
@@ -315,7 +318,6 @@ return [
             'text_color' => 'text-white',
             'aria_role' => 'status',
             'progress_bar' => [
-                'bg' => 'bg-green-500', // Foreground color for success progress bar
                 'height' => 'h-1', // Can override global progress bar height
             ],
             'sound' => ['src' => 'success'], // Refers to the 'success' asset in 'sounds.assets'
@@ -328,7 +330,7 @@ return [
             'text_color' => 'text-white',
             'show_progress' => true,
             'aria_role' => 'alert',
-            'progress_bar' => ['bg' => 'bg-red-500'],
+            'progress_bar' => [],
             'sound' => ['src' => 'error', 'volume' => 0.8],
             'actions' => [ // Example actions for error toasts
                 [
@@ -344,7 +346,7 @@ return [
             'icon' => '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.174 3.374 1.945 3.374h14.71c1.771 0 2.812-1.874 1.945-3.374L13.94 2.332c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>',
             'duration' => 4000,
             'text_color' => 'text-gray-800 dark:text-white',
-            'progress_bar' => ['bg' => 'bg-yellow-400'],
+            'progress_bar' => [],
             'dismissible' => true,
             'sound' => ['src' => 'warning'],
             'priority' => 'normal',
@@ -355,7 +357,7 @@ return [
             'duration' => 4000,
             'text_color' => 'text-white',
             'dismissible' => true,
-            'progress_bar' => ['bg' => 'bg-blue-500'],
+            'progress_bar' => [],
             'sound' => ['src' => 'info'],
             'priority' => 'normal',
         ],
@@ -377,7 +379,7 @@ return [
             'show_progress' => true,
             'dismissible' => false,
             'layout_preset' => 'with_actions',
-            'progress_bar' => ['bg' => 'bg-purple-400'],
+            'progress_bar' => [],
             'actions' => [
                 [
                     'label' => 'View Details',

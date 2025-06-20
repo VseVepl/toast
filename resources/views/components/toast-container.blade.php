@@ -155,7 +155,7 @@
                     setTimeout(() => {
                         this.toasts = this.toasts.filter(t => t.id !== toastId);
                         if (this.$wire) { this.$wire.dismissToast(toastId); }
-                    }, (Alpine.raw(toast.animation)?.leave_duration || Alpine.raw(this.animationPresets)?.default?.leave_duration || 300) + 50);
+                    }, (Alpine.raw(toast.animation)?.leave_duration ?? options.animationsDefaultConfig.default_leave_duration ?? 300) + 50);
                 }
             },
 
