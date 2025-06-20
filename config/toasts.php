@@ -140,6 +140,7 @@ return [
         'mobile_position' => 'bottom-right', // Default mobile screen position (responsive)
         'max_width' => 'max-w-md', // Tailwind class for maximum width on desktop
         'mobile_max_width' => 'max-w-xs', // Tailwind class for maximum width on mobile
+        'z_index' => 1050, // Common z-index for overlays like toasts and modals
     ],
 
     /* Progress Bar Settings */
@@ -163,6 +164,7 @@ return [
         'type_overrides' => [ // Overrides for specific toast types
             'success' => ['foreground' => 'bg-green-400/90 dark:bg-green-500/80'],
             'error' => ['foreground' => 'bg-red-400/90 dark:bg-red-500/80', 'height' => 'h-[2px]'],
+            'default' => ['foreground' => 'bg-gray-500 dark:bg-gray-400'], // Default fallback
         ],
     ],
 
@@ -224,6 +226,7 @@ return [
             'default_volume' => 1.0, // Global default volume (0.0 to 1.0)
             'default_loop' => false, // Global default loop behavior
             'throttle_ms' => 50, // Minimum time between consecutive sound plays (ms)
+            'require_interaction_on_mobile' => true, // If true, the first sound on mobile will only play after a user interaction with the page.
         ],
         'assets' => [ // Define individual sound assets and their properties
             'notification' => [
@@ -363,7 +366,7 @@ return [
             'text_color' => 'text-white',
             'show_progress' => false,
             'dismissible' => true,
-            'progress_bar' => ['bg' => 'bg-gray-700'],
+            'progress_bar' => ['bg' => 'bg-gray-700 dark:bg-gray-600'], // Ensure dark variant for default type's progress bar
             'priority' => 'low',
         ],
         'custom_notification' => [
