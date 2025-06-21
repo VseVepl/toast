@@ -15,7 +15,7 @@ class ToastMessage
         // Replace with `Livewire::dispatch()` if running in a context where it's available,
         // or use `event(new SomeGlobalToastEvent($payload))` if you prefer Laravel events.
         // For direct Livewire component event emission without a component instance:
-        app(EventBus::class)->dispatch('newToast', payload: $payload);
+        \Livewire\Livewire::dispatch('newToast', payload: $payload);
     }
 
     public static function show(string $message, string $type = 'default', ?string $title = null, array $options = [])
